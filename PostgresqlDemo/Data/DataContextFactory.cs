@@ -8,7 +8,7 @@ namespace PostgresqlDemo.Data
         public DataContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<DataContext>();
-            optionsBuilder.UseSqlServer("Data Source=FANGQ-X1C\\SQLEXPRESS;Initial Catalog=QuizAppDb;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False");
+            optionsBuilder.UseSqlServer("");
 
             return new DataContext(optionsBuilder.Options);
         }
