@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysqlBlazor", "MysqlBlazor\MysqlBlazor.csproj", "{D3949AFE-B451-4FAA-8F8A-BFA925AF30E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysqlBlazor", "MysqlBlazor\MysqlBlazor.csproj", "{D3949AFE-B451-4FAA-8F8A-BFA925AF30E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysqlLibrary", "MysqlLibrary\MysqlLibrary.csproj", "{047185BA-277F-472C-BE00-F72CB2727F88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysqlLibrary", "MysqlLibrary\MysqlLibrary.csproj", "{047185BA-277F-472C-BE00-F72CB2727F88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostgresqlDemo", "PostgresqlDemo\PostgresqlDemo.csproj", "{D5FEDB75-D79B-44CB-9DD9-1D0090D878AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{047185BA-277F-472C-BE00-F72CB2727F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{047185BA-277F-472C-BE00-F72CB2727F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{047185BA-277F-472C-BE00-F72CB2727F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FEDB75-D79B-44CB-9DD9-1D0090D878AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FEDB75-D79B-44CB-9DD9-1D0090D878AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FEDB75-D79B-44CB-9DD9-1D0090D878AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FEDB75-D79B-44CB-9DD9-1D0090D878AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
