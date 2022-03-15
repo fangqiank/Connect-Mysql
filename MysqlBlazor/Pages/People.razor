@@ -1,0 +1,79 @@
+﻿@page "/people"
+@using MysqlLibrary
+@using MysqlBlazor.Models
+@using Microsoft.Extensions.Configuration
+@inject IDataAccess _db
+@inject IConfiguration _config
+
+<h3>People</h3>
+
+<button class="btn btn-outline-info" @onclick="InsertData">Insert</button>
+<button class="btn btn-outline-warning" @onclick="UpdateData">Update</button>
+<button class="btn btn-outline-danger" @onclick="DeleteData">Delete</button>
+
+@if (people == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in people)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.FirstName</td>
+                <td>@p.LastName</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<PersonDto> people;
+
+    protected  override async Task OnInitializedAsync()
+    {
+        string sql = "select * from people";
+        people = await _db.LoadData<PersonDto,dynamic>(sql, new {},
+            _config.GetConnectionString("default"));
+    }
+
+    private async Task InsertData()
+    {
+        string sql = "insert into people (FirstName,LastName) values(@FirstName,@LastName);";
+        await _db.SaveData(sql, new {FirstName = "Billy", LastName = "Bob"},
+            _config.GetConnectionString("default"));
+
+        await OnInitializedAsync();
+
+    }
+
+    private async Task UpdateData()
+    {
+        string sql = "update people set FirstName=@FirstName where LastName=@LastName;";
+        await _db.SaveData(sql, new { FirstName = "Jackie", LastName = "Bob" },
+            _config.GetConnectionString("default"));
+
+        await OnInitializedAsync();
+    }
+
+    private async Task DeleteData()
+    {
+        string sql = "delete from people where FirstName=@FirstName;";
+        await _db.SaveData(sql, new { FirstName = "wang" },
+            _config.GetConnectionString("default"));
+
+        await OnInitializedAsync();
+    }
+
+}
